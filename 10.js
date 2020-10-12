@@ -1,10 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'NzU2MzI2MDYzMjAxODQ1MzI5.X2QNiQ.MIcu-N0crM4mLrRk3iAvwKhL5UA';
-const welcomeChannelName = "안녕하세요";
-const byeChannelName = "안녕히가세요";
+const token = process.argv.length == 2 ? process.env.token : "";
+const welcomeChannelName = "환영해🎉";
 const welcomeChannelComment = "어서오세요.";
-const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
@@ -120,30 +118,6 @@ client.on('message', (message) => {
     message.reply("https://discord.gg/7nQBbhP")
   }
 
-  if(message.content == "!제작자") {
-    message.reply("제작자 바보임 ㅋ")
-  }
-
-  if(message.content == "이런싸가지") {
-    message.reply("꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~")
-  }
-
-  if(message.content == "삭제한다?") {
-    message.reply("제작자님 사랑합니다 하하 장난인거 알죠?")
-  }
-
-  if(message.content == "봐준다") {
-    message.reply("에휴 저 병진 매일 삭제한다고 지럴이여")
-  }
-
-  if(message.content == "뭔말했냐?") {
-    message.reply("어? 아니에요")
-  }
-
-  if(message.content == "!도배") {
-    message.reply("도배")
-  }
-
   if(message.content == '!이월') {
     let img = 'https://cdn.discordapp.com/attachments/662331183069396993/712936611368796180/-_.png';
     let embed = new Discord.RichEmbed()
@@ -162,33 +136,33 @@ client.on('message', (message) => {
       .setTimestamp()
       .setFooter('고수였던것이 만듬', img)
 
-    message.channel.send(embed)
-  } else if(message.content == '!help') {
-    let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
-    let commandList = [
-      {name: '!이월', desc: '이월님 소개 및 개발자 소개'},
-      {name: '!도움말', desc: '(help) 명령어 안내'},
-      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기(이월님만 가능)'},
-      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
-      {name: '!청소', desc: '텍스트 지움'},
-      {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
-      {name: '!방송', desc: '이월님 채널로 이동'},
-      {name: '!후원', desc: 'TWIP으로 이동합니다.'},
-      {name: '!노래(1~10)', desc: '노래를 추천기능~!.'},
-      {name: '!구독', desc: '트위치구독'},
-      {name: '!버전', desc: '버전을 알려줍니다.'},
-      {name: '!채팅규칙', desc: '트위치 생방송 채팅규칙을 알려드립니다.'},
-      {name: '!트게더', desc: '트게더 로 이동합니다.'},
-      {name: '!이월봇추가', desc: '자신의 서버에 이월봇을 추가하고싶다면 "!이월봇추가"을 쳐보세요'},
-      {name: '!마크섭', desc: '마크서버 주소을 알려줍니다.'},
-    ];
-    let commandStr = '';
-    let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 이월봇~!', helpImg)
-      .setColor('#FF00FF')
-      .setFooter(`이월봇 BOT ❤️`)
-      .setTimestamp()
+      message.channel.send(embed)
+    } else if(message.content == '!help') {
+      let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
+      let commandList = [
+        {name: '!이월', desc: '이월님 소개 및 개발자 소개'},
+        {name: '!도움말', desc: '(help) 명령어 안내'},
+        {name: '!전체공지', desc: 'dm으로 전체 공지 보내기(이월님만 가능)'},
+        {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
+        {name: '!청소', desc: '텍스트 지움'},
+        {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
+        {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+        {name: '!방송', desc: '이월님 채널로 이동'},
+        {name: '!후원', desc: 'TWIP으로 이동합니다.'},
+        {name: '!노래(1~10)', desc: '노래를 추천기능~!.'},
+        {name: '!구독', desc: '트위치구독'},
+        {name: '!버전', desc: '버전을 알려줍니다.'},
+        {name: '!채팅규칙', desc: '트위치 생방송 채팅규칙을 알려드립니다.'},
+        {name: '!트게더', desc: '트게더 로 이동합니다.'},
+        {name: '!이월봇추가', desc: '자신의 서버에 이월봇을 추가하고싶다면 "!이월봇추가"을 쳐보세요'},
+        {name: '!마크섭', desc: '마크서버 주소을 알려줍니다.'},
+      ];
+      let commandStr = '';
+      let embed = new Discord.RichEmbed()
+        .setAuthor('Help of 이월봇~!', helpImg)
+        .setColor('#FF00FF')
+        .setFooter(`이월봇 BOT ❤️`)
+        .setTimestamp()
     
     commandList.forEach(x => {
       commandStr += `• \`\`${changeCommandStringLength(`${x.name}`)}\`\` : **${x.desc}**\n`;

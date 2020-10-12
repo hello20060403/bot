@@ -6,7 +6,7 @@ const welcomeChannelComment = "어서오세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '!도움말 을 쳐보세요' }, status: 'online' })
+  client.user.setPresence({ game: { name: '!도움말 를 쳐보세요~!' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {

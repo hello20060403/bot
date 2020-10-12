@@ -161,7 +161,7 @@ client.on('message', (message) => {
       .setFooter('고수였던것이 만듬', img)
 
     message.channel.send(embed)
-  } else if(message.content == '!help') {
+  } else if(message.content == '!도움말') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [      
       {name: 'ping', desc: '현재 핑 상태'},

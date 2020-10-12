@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "";
+const token = 'NzU2MzI2MDYzMjAxODQ1MzI5.X2QNiQ.MIcu-N0crM4mLrRk3iAvwKhL5UA';
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -118,6 +118,30 @@ client.on('message', (message) => {
 
   if(message.content == "!버그") {
     message.reply("https://discord.gg/7nQBbhP")
+  }
+
+  if(message.content == "!제작자") {
+    message.reply("제작자 바보임 ㅋ")
+  }
+
+  if(message.content == "이런싸가지") {
+    message.reply("꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~꼬우신가요?매롱~~~~~")
+  }
+
+  if(message.content == "삭제한다?") {
+    message.reply("제작자님 사랑합니다 하하 장난인거 알죠?")
+  }
+
+  if(message.content == "봐준다") {
+    message.reply("에휴 저 병진 매일 삭제한다고 지럴이여")
+  }
+
+  if(message.content == "뭔말했냐?") {
+    message.reply("어? 아니에요")
+  }
+
+  if(message.content == "!도배") {
+    message.reply("도배")
   }
 
   if(message.content == '!이월') {
